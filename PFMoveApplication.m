@@ -20,10 +20,10 @@
 #define kStrMoveApplicationCouldNotMove _I10NS(@"Could not move to Applications folder")
 #define kStrMoveApplicationQuestionTitle  _I10NS(@"Move to Applications folder?")
 #define kStrMoveApplicationQuestionTitleHome _I10NS(@"Move to Applications folder in your Home folder?")
-#define kStrMoveApplicationQuestionMessage _I10NS(@"I can move myself to the Applications folder if you'd like.")
+#define kStrMoveApplicationQuestionMessage _I10NS(@"%@ can move itself to the Applications folder if you'd like.")
 #define kStrMoveApplicationButtonMove _I10NS(@"Move to Applications Folder")
 #define kStrMoveApplicationButtonDoNotMove _I10NS(@"Do Not Move")
-#define kStrMoveApplicationQuestionInfoWillRequirePasswd _I10NS(@"Note that this will require an administrator password.")
+#define kStrMoveApplicationQuestionInfoWillRequirePasswd _I10NS(@"This will require an administrator password.")
 #define kStrMoveApplicationQuestionInfoInDownloadsFolder _I10NS(@"This will keep your Downloads folder uncluttered.")
 
 // Needs to be defined for compiling under 10.5 SDK
@@ -89,7 +89,8 @@ void PFMoveToApplicationsFolderIfNecessary(void) {
 
 		[alert setMessageText:(installToUserApplications ? kStrMoveApplicationQuestionTitleHome : kStrMoveApplicationQuestionTitle)];
 
-		informativeText = kStrMoveApplicationQuestionMessage;
+		informativeText = [NSString stringWithFormat:kStrMoveApplicationQuestionMessage,
+						   [[NSRunningApplication currentApplication] localizedName]];
 
 		if (needAuthorization) {
 			informativeText = [informativeText stringByAppendingString:@" "];
