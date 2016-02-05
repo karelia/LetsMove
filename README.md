@@ -3,6 +3,14 @@ LetsMove
 
 A sample project that demonstrates how to move a running Mac OS X application to the Applications folder.
 
+![Screenshot](http://i.imgur.com/euTRZiI.png)
+
+
+Requirements
+------------
+Builds and runs on Mac OS X 10.5 or higher. Does NOT support sandboxed applications.
+
+
 Usage
 -----
 
@@ -17,6 +25,8 @@ If your project has ARC enabled, you'll want to disable ARC on the above files. 
 
 If your application is localized, also copy the 'MoveApplication.string' files into your project.
 
+Link your application against Security.framework.
+
 License
 -------
 Public domain
@@ -26,8 +36,41 @@ Public domain
 Version History
 ---------------
 
+* 1.20
+	- Support for applications bundled inside another application
+	- Brazilian Portuguese localization slightly updated
+	- Build warnings fixed
+
+* 1.19
+	- Slovak localization added
+
+* 1.18
+	- Catalan localization added
+
+* 1.17
+	- Tranditional Chinese localization added.
+
+* 1.16
+	- Deprecation warning that appears when minimum deployment target is set to OS X 10.10 taken care of
+
+* 1.15
+	- Swedish localization added
+
+* 1.14
+	- Hugarian, Serbian, and Turkish localizations added
+	- Macedonian localization added
+
+* 1.13
+	- Polish localization added
+
+* 1.12
+	- Use country code based .lproj directories
+	- Make it compile for projects that don't use precompiled headers to import AppKit.framework
+	- Minor adjustment to Dutch localization
+	- Warning fixes in example project
+
 * 1.11
-    - Objective-C++ compatibility
+	- Objective-C++ compatibility
 
 * 1.10
 	- Fixed deprecation warnings that show up when building against the OS X 10.9 SDK.
@@ -96,11 +139,6 @@ Version History
 	- First release
 
 
-Requirements
-------------
-Builds and runs on Mac OS X 10.5 or higher.
-
-
 Code Contributors:
 -------------
 * Andy Kim
@@ -114,6 +152,7 @@ Code Contributors:
 * Nick Moore
 * Nicholas Riley
 
+
 Translators:
 ------------
 * Eita Hayashi (Japanese)
@@ -126,6 +165,14 @@ Translators:
 * Marco Improda (Italian)
 * Venj Chu (Simplified Chinese)
 * Sérgio Miranda (European Portuguese)
-* Victor Figueiredo (Brazilian Portuguese)
+* Victor Figueiredo and BR Lingo (Brazilian Portuguese)
 * AppLingua (Korean)
 * Czech X Team (Czech)
+* Marek Telecki (Polish)
+* Petar Vlahu (Macedonian)
+* Václav Slavík (Hungarian, Serbian, and Turkish)
+* Erik Vikström (Swedish)
+* Inndy Lin (Traditional Chinese)
+* aONe (Catalan)
+* Marek Hrusovsky (Slovak)
+
